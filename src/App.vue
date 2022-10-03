@@ -1,14 +1,17 @@
 <template>
   <HeaderPart/>
+  <MainPart/>
 </template>
 
 <script>
 import HeaderPart from './components/HeaderPart.vue'
+import MainPart from './components/MainPart.vue'
 
 export default {
   name: 'App',
   components: {
-    HeaderPart
+    HeaderPart,
+    MainPart
   }
 }
 </script>
@@ -37,9 +40,6 @@ img {
   max-width:100%;
 }
 
-a {
-  margin:0 auto;
-}
 
 
 
