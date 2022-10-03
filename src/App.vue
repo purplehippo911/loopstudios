@@ -1,17 +1,21 @@
 <template>
   <HeaderPart/>
   <MainPart/>
+  <FooterPart/>
 </template>
 
 <script>
 import HeaderPart from './components/HeaderPart.vue'
 import MainPart from './components/MainPart.vue'
+import FooterPart from './components/FooterPart.vue'
+
 
 export default {
   name: 'App',
   components: {
     HeaderPart,
-    MainPart
+    MainPart,
+    FooterPart
   }
 }
 </script>
