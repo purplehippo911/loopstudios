@@ -44,8 +44,7 @@
         </a>
         
         <a class="header__icons" href="#" @click="toggleNav">
-            <img src="../assets/images/icon-hamburger.svg" alt="hamburger" ref="hamburger" />
-            <img src="../assets/images/icon-close.svg" alt="close" class="close" ref="closeButton"/>
+            <img src="../assets/images/icon-close.svg" alt="close" class="closeButton" ref="dropdownClose"/>
         </a>
 
           <nav class="dropdown__nav">
@@ -85,8 +84,7 @@
       </div>
 
       <a class="header__icons" href="#" @click="toggleNav">
-        <img src="../assets/images/icon-hamburger.svg" alt="hamburger" ref="hamburger" />
-        <img src="../assets/images/icon-close.svg" alt="close" class="close" ref="closeButton"/>
+        <img src="../assets/images/icon-hamburger.svg" alt="hamburger" class="hamburger" ref="hamburger" />
       </a>
 
       <div class="header__hero">
@@ -109,8 +107,14 @@ export default {
   methods: {
     toggleNav() {
       this.$refs.hamburger.classList.toggle('close');
-      this.$refs.closeButton.classList.toggle('close');
-      this.$refs.dropdown.classList.toggle('close');
+
+      
+      this.$refs.dropdownClose.classList.toggle('open');
+      this.$refs.dropdownClose.classList.toggle('active');
+
+      
+      this.$refs.dropdown.classList.toggle('open');
+      this.$refs.dropdown.classList.toggle('active');
     }
   }
 }
@@ -120,9 +124,7 @@ export default {
 <style lang="scss">
 @import '../_variables';
 
-.close {
-  display: none;
-}
+
 
 header {
   width: 100%;
@@ -145,10 +147,12 @@ header {
 
 .logo {
   margin-right:auto;
+  width:100%;
+  padding:2rem,
 }
 
 .nav {
-  width:50%;
+  width:100%;
   display:none;
   .nav__list {
     display: flex;
@@ -167,20 +171,26 @@ header {
 }
 
 .dropdown {
+  display:none;
+  opacity:0;
   position:fixed;
   top:0;
   left:0;
   width:100%;
   height:100%;
   background:$Black;
+  transition:0.7s ease-in-out;
   .dropdown__nav {
     @extend .nav;
     display:flex;
+    width: 100%;
+    .row {
+    justify-content:flex-end;
+    }
+    .nav__list {
+      flex-direction:column;
+    }
   }
-}
-
-.dropdown.container {
-  width:100%;
 }
 
 
@@ -192,12 +202,24 @@ header {
   }
 }
 
+.closeButton {
+  display:none;
+  opacity:0;
+  transition:0.7s ease-in-out;
+}
+
+.hamburger {
+  transition:0.7s ease-in-out;
+  @media screen and (min-width:800px) {
+    display:none;
+  }
+}
 
 .header__hero {
   font-size: 2.7em;
   border: 2px solid $White;
   color:$White;
-  align-self: center;
+  grid-row-start: 2;
 }
 
 .header__title {
@@ -205,5 +227,18 @@ header {
   width: 57%;
   padding: 2rem;
 }
+
+.close {
+  display:none;
+}
+
+.open {
+  display:grid;
+}
+
+.active {
+  opacity:1;
+}
+
 </style>
   

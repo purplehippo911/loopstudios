@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container row">
+        <div class="container grid">
             <section class="interactive-section">
                 <div class="container row">
                     <picture>
