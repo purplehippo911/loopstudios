@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container grid">
+        <div class="container row">
             <section class="interactive-section">
                 <div class="container row">
                     <picture>
@@ -9,15 +9,17 @@
                         <img src="../assets/images/mobile/image-interactive.jpg" alt="someone playing a VR game">
                     </picture>
 
-                    <h1 class="interactive__title">
-                        The leader in interactive VR
-                    </h1>
-                    <p class="interactive__info">
-                        Founded in 2011, Loopstudios has been producing world-class virtual reality 
-                        projects for some of the best companies around the globe. Our award-winning 
-                        creations have transformed businesses through digital experiences that bind 
-                        to their brand.
-                    </p>
+                    <div class="interactive__col">
+                        <h1 class="interactive__title">
+                            The leader in interactive VR
+                        </h1>
+                        <p class="interactive__info">
+                            Founded in 2011, Loopstudios has been producing world-class virtual reality
+                            projects for some of the best companies around the globe. Our award-winning
+                            creations have transformed businesses through digital experiences that bind
+                            to their brand.
+                        </p>
+                    </div>
                 </div>
             </section>
             
@@ -62,12 +64,23 @@ export default {
     name: 'MainPart',
     data() {
         return {
-            message: 'this finally works, right'
         }
     }
     }
 </script>
 
 <style lang="scss">
+    @import '../_variables';
+
+    main {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    section {
+        width:80%;
+
+    }
+
 
 </style> 

@@ -121,14 +121,12 @@ export default {
 
 </script>
   
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../_variables';
 
 
 
 header {
-  width: 100%;
-  padding: 3rem 0;
   background: url("../assets/images/desktop/image-hero.jpg") no-repeat;
   background-size: cover;
 
@@ -141,13 +139,10 @@ header {
 .grid {
   display:grid;
   align-items: center;
-  grid-template-columns: 3fr 2fr;
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .logo {
-  margin-right:auto;
-  width:100%;
   padding:2rem,
 }
 
@@ -195,8 +190,10 @@ header {
 
 
 .header__icons {
-  justify-self:end;
   width:3rem;
+  justify-self: end;
+  grid-row-start: 2;
+  text-align:center;
   &:focus ~ nav {
     display:flex;
   }
@@ -219,7 +216,7 @@ header {
   font-size: 2.7em;
   border: 2px solid $White;
   color:$White;
-  grid-row-start: 2;
+  grid-column: span 2;
 }
 
 .header__title {
