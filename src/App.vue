@@ -23,11 +23,18 @@ export default {
 <style lang="scss">
   @import './_variables';
 
+  *, *::before, *::after {
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+
 body {
   margin:0;
   padding:0;
   background-color: $White;
   font-family: 'Josefin Sans', sans-serif; 
+  font-size:15px;
 }
 
 .container {

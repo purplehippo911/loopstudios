@@ -122,7 +122,7 @@ export default {
 </script>
   
 <style lang="scss" scoped>
-@import '../_variables';
+@import '../_variables.scss';
 
 
 
@@ -143,12 +143,18 @@ header {
 }
 
 .logo {
-  padding:2rem,
+  padding:2rem;
+  text-align: center;
+  @media screen and (min-width:800px) {
+    grid-column: span 2;
+  }
 }
 
 .nav {
-  width:100%;
+  width:80%;
   display:none;
+  grid-column: span 3;
+  justify-self: end;
   .nav__list {
     display: flex;
     gap: 2rem;
@@ -157,7 +163,10 @@ header {
   
   .nav__link {
     text-decoration: none;
-    color: $White;
+    color: $DarkGray;
+    font-size:2.2em;
+    text-transform:uppercase;
+    font-family:'Alata', sans-serif;
   }
   @media screen and (min-width:800px) {
     display:flex;
@@ -175,15 +184,22 @@ header {
   height:100%;
   background:$Black;
   transition:0.7s ease-in-out;
+  grid-template-columns: repeat(auto-fit, minmax(169px, 1fr));
+  @media screen and (min-width:800px) {
+    display:none;
+    opacity:0;
+  }
   .dropdown__nav {
     @extend .nav;
     display:flex;
-    width: 100%;
-    .row {
-    justify-content:flex-end;
-    }
+    grid-column:span 1;
+    grid-row-start: 2;
+    justify-self: start;
     .nav__list {
       flex-direction:column;
+    }
+    .header__icons {
+      grid-row-start: 3;
     }
   }
 }
@@ -192,7 +208,6 @@ header {
 .header__icons {
   width:3rem;
   justify-self: end;
-  grid-row-start: 2;
   text-align:center;
   &:focus ~ nav {
     display:flex;
@@ -217,6 +232,9 @@ header {
   border: 2px solid $White;
   color:$White;
   grid-column: span 2;
+  @media screen and (min-width:800px) {
+    grid-column: span 3;
+  }
 }
 
 .header__title {
