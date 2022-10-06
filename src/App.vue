@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import './_variables';
+  @import './variables.scss';
 
   *, *::before, *::after {
     box-sizing:border-box;
@@ -51,7 +51,21 @@ img {
   max-width:100%;
 }
 
+h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: $Black;
+}
 
+p {
+  padding: 0 2rem;
+  margin-top: 1rem;
+  color: $DarkGray;
+}
 
+picture {
+  margin-bottom: 2rem;
+}
 
 </style>

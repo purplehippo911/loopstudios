@@ -88,7 +88,7 @@
       </a>
 
       <div class="header__hero">
-        <h2 class="header__title">Immersive experiences that deliver</h2>
+        <h1 class="header__title">Immersive experiences that deliver</h1>
       </div>
     </div>
 
@@ -122,7 +122,7 @@ export default {
 </script>
   
 <style lang="scss" scoped>
-@import '../_variables.scss';
+@import '../variables.scss';
 
 
 
@@ -164,7 +164,6 @@ header {
   .nav__link {
     text-decoration: none;
     color: $DarkGray;
-    font-size:2.2em;
     text-transform:uppercase;
     font-family:'Alata', sans-serif;
   }
@@ -175,6 +174,7 @@ header {
 }
 
 .dropdown {
+font-size:2.2em;
   display:none;
   opacity:0;
   position:fixed;
@@ -228,7 +228,7 @@ header {
 }
 
 .header__hero {
-  font-size: 2.7em;
+  font-size: 2.2em;
   border: 2px solid $White;
   color:$White;
   grid-column: span 2;
