@@ -1,0 +1,13 @@
+@mixin backgroundIMG($Mobile, $Desktop) {
+    background:url($Mobile) no-repeat;
+    background-size:cover;
+    @media screen and (min-width:800px) {
+        background:url($Desktop) no-repeat;
+     }
+}
+
+@mixin grid($auto, $min, $max) {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat($auto, minmax($min, $max));
+}

@@ -122,18 +122,13 @@ export default {
 </script>
   
 <style lang="scss" scoped>
-@import '../variables.scss';
+@import '../styles/variables.scss';
+@import '../styles/mixin.scss';
 
 
 
 header {
-  background: url("../assets/images/desktop/image-hero.jpg") no-repeat;
-  background-size: cover;
-
-  @media screen and (min-width:800px) {
-    background: url("../assets/images/desktop/image-hero.jpg") no-repeat;
-  }
-
+  @include backgroundIMG("../assets/images/mobile/image-hero.jpg", "../assets/images/desktop/image-hero.jpg" );
 }
 
 .grid {

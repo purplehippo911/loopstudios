@@ -27,32 +27,41 @@
                 <div class="container gallery">
                     <h2 class="gallery__title"> Our creations</h2>
                     
-                        <div class="gallery__item deep-earth">
-                            <p class="gallery__info">Deep earth</p>
-                        </div>
+                    <div class="gallery__wrapper">
+                            <div class="gallery__item deep-earth">
+                                <h3 class="gallery__info">Deep earth</h3>
+                            </div>
+                    </div>
+
                         <div class="gallery__item night-arcade">
-                            <p class="gallery__info">Night arcade</p>
+                            <h3 class="gallery__info">Night arcade</h3>
                         </div>
+                        
                         <div class="gallery__item soccer-team">
-                            <p class="gallery__info">Soccer team VR</p>
+                            <h3 class="gallery__info">Soccer team VR</h3>
                         </div>
+                        
                         <div class="gallery__item the-grid">
-                            <p class="gallery__info">The grid</p>
+                            <h3 class="gallery__info">The grid</h3>
                         </div>
+                        
                         <div class="gallery__item from-above">
-                            <p class="gallery__info">From up above VR</p>
+                            <h3 class="gallery__info">From up above VR</h3>
                         </div>
+                        
                         <div class="gallery__item pocket-borealis">
-                            <p class="gallery__info">Pocket borealis</p>
+                            <h3 class="gallery__info">Pocket borealis</h3>
                         </div>
+                        
                         <div class="gallery__item curiosity">
-                            <p class="gallery__info">The curiosity</p>
+                            <h3 class="gallery__info">The curiosity</h3>
                         </div>
+                        
                         <div class="gallery__item fisheye">
-                            <p class="gallery__info">Make it fisheye</p>
+                            <h3 class="gallery__info">Make it fisheye</h3>
                         </div>
 
-                    <button class="gallery_button"> See all </button>
+                    <button class="gallery__button"> See all </button>
                 </div>
             </section>
         </div>
@@ -70,15 +79,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import '../variables.scss';
-
-  @mixin backgroundIMG($Mobile, $Desktop) {
-        background:url($Mobile) no-repeat;
-        background-size:cover;
-        @media screen and (min-width:800px) {
-            background:url($Desktop) no-repeat;
-         }
-    }
+  @import '../styles/variables.scss';
+  @import '../styles/mixin.scss';
 
     main {
         margin: 2rem 0;
@@ -98,9 +100,7 @@ export default {
         text-align:center;
         .grid {
             @media screen and (min-width:800px) {
-                display: grid;
-                justify-items: center;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+                @include grid(auto-fit, 200px, 2fr);
             }
         }
     }
@@ -117,28 +117,91 @@ export default {
     }
 
     .gallery {
-        display:grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        @include grid(auto-fill, 200px, 1fr);
+        gap:2rem;
+        text-align:unset;
         .gallery__title {
             grid-column:1 / -1;
+            align-self:center;
+            justify-self: center;
+            @media screen and (min-width:800px) {
+                justify-self: start;
+                grid-column:1 / 3;
+
+             }
         }
+
         .gallery__item {
-            width:100%;
+            width: 120.5vh;
+            height:50vh;
             padding:2rem;
+            color:$White;
+            text-align: left;
+            display: flex;
+            align-items: flex-end;
+            font-size: 1.21em;
+            @media screen and (min-width:800px) {
+                width: 16.9vw;
+                height: 100vh;
+            }
         }
 
         .deep-earth {
-            @include backgroundIMG('../assets/images/mobile/image-deep-earth.jpg', '../assets/images/desktop/image-deep-earth.jpg');
-            // background:url('../assets/images/mobile/image-deep-earth.jpg') no-repeat;
-            // background-size:cover;
-            // @media screen and (min-width:800px) {
-            //     background:url('../assets/images/desktop/image-deep-earth.jpg') no-repeat;
-            //  }
-            }
-        
-        
-        
+            @include backgroundIMG("../assets/images/mobile/image-deep-earth.jpg", "../assets/images/desktop/image-deep-earth.jpg");
+        }
 
+        .night-arcade {
+            @include backgroundIMG("../assets/images/mobile/image-night-arcade.jpg", "../assets/images/desktop/image-night-arcade.jpg");
+        }
+
+        .soccer-team {
+            @include backgroundIMG("../assets/images/mobile/image-soccer-team.jpg", "../assets/images/desktop/image-soccer-team.jpg");
+        }
+
+        .the-grid {
+            @include backgroundIMG("../assets/images/mobile/image-grid.jpg", "../assets/images/desktop/image-grid.jpg");
+        }
+        
+        .from-above {
+            @include backgroundIMG("../assets/images/mobile/image-from-above.jpg", "../assets/images/desktop/image-from-above.jpg");
+        }
+        .pocket-borealis {
+            @include backgroundIMG("../assets/images/mobile/image-pocket-borealis.jpg", "../assets/images/desktop/image-pocket-borealis.jpg");
+        }
+        .curiosity {
+            @include backgroundIMG("../assets/images/mobile/image-curiosity.jpg", "../assets/images/desktop/image-curiosity.jpg");
+        }
+        .fisheye {
+            @include backgroundIMG("../assets/images/mobile/image-fisheye.jpg", "../assets/images/desktop/image-fisheye.jpg");
+        }
+        
+        .gallery__button {
+            border:0;
+            padding:.5rem 1.5rem;
+            font-family:$Alata;
+            text-transform:uppercase;
+            border:2px solid $Black;
+            background:$White;
+            color:$Black;
+
+            grid-row-start: 10;
+            justify-self: center;
+            align-self:center;
+            grid-column:1 / -1;
+            transition:0.5s ease-in-out;
+
+            @media screen and (min-width:800px) {
+                grid-row-start: 1;
+                grid-column: 3/-1;
+                justify-self: end;
+             }
+
+            &:hover {
+                background:$Black;
+                color:$White;
+            }
+        }
+        
     }
 
 </style> 
