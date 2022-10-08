@@ -27,40 +27,46 @@
                 <div class="container gallery">
                     <h2 class="gallery__title"> Our creations</h2>
                     
-                    <div class="gallery__wrapper">
-                            <div class="gallery__item deep-earth">
-                                <h3 class="gallery__info">Deep earth</h3>
-                            </div>
+                    <div class="gallery__item deep-earth">
+                            <h3 class="gallery__info">Deep earth</h3>
+                            <div class="gallery__wrapper"></div>
                     </div>
 
-                        <div class="gallery__item night-arcade">
-                            <h3 class="gallery__info">Night arcade</h3>
-                        </div>
-                        
-                        <div class="gallery__item soccer-team">
-                            <h3 class="gallery__info">Soccer team VR</h3>
-                        </div>
-                        
-                        <div class="gallery__item the-grid">
-                            <h3 class="gallery__info">The grid</h3>
-                        </div>
-                        
-                        <div class="gallery__item from-above">
-                            <h3 class="gallery__info">From up above VR</h3>
-                        </div>
-                        
-                        <div class="gallery__item pocket-borealis">
-                            <h3 class="gallery__info">Pocket borealis</h3>
-                        </div>
-                        
-                        <div class="gallery__item curiosity">
-                            <h3 class="gallery__info">The curiosity</h3>
-                        </div>
-                        
-                        <div class="gallery__item fisheye">
-                            <h3 class="gallery__info">Make it fisheye</h3>
-                        </div>
-
+                    <div class="gallery__item night-arcade">
+                        <h3 class="gallery__info">Night arcade</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item soccer-team">
+                        <h3 class="gallery__info">Soccer team VR</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item the-grid">
+                        <h3 class="gallery__info">The grid</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item from-above">
+                        <h3 class="gallery__info">From up above VR</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item pocket-borealis">
+                        <h3 class="gallery__info">Pocket borealis</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item curiosity">
+                        <h3 class="gallery__info">The curiosity</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
+                    <div class="gallery__item fisheye">
+                        <h3 class="gallery__info">Make it fisheye</h3>
+                        <div class="gallery__wrapper"></div>
+                    </div>
+                    
                     <button class="gallery__button"> See all </button>
                 </div>
             </section>
@@ -132,22 +138,40 @@ export default {
         }
 
         .gallery__item {
-            width: 120.5vh;
-            height:50vh;
+            width: 100%;
+            height:10rem;
             padding:2rem;
+            position:relative;
             color:$White;
             text-align: left;
             display: flex;
             align-items: flex-end;
             font-size: 1.21em;
             @media screen and (min-width:800px) {
-                width: 16.9vw;
-                height: 100vh;
+                height: 20rem;
+            }
+            &:hover {
+                color:$Black;
+            }
+            .gallery__wrapper {
+                background: $White;
+                position: absolute;
+                bottom: 0;
+                left: 0px;
+                width: 100%;
+                height: .2vh;
+                opacity: .5;
+                transition: 0.7s;
             }
         }
-
+        .gallery__item:hover .gallery__wrapper {
+            height:100%;
+        }
         .deep-earth {
             @include backgroundIMG("../assets/images/mobile/image-deep-earth.jpg", "../assets/images/desktop/image-deep-earth.jpg");
+            &:hover {
+                color:$White;
+            }
         }
 
         .night-arcade {
@@ -201,7 +225,6 @@ export default {
                 color:$White;
             }
         }
-        
     }
 
 </style> 

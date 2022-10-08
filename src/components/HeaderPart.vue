@@ -132,9 +132,8 @@ header {
 }
 
 .grid {
-  display:grid;
+  @include grid(auto-fill, 200px, 1fr);
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .logo {
@@ -169,7 +168,7 @@ header {
 }
 
 .dropdown {
-font-size:2.2em;
+  font-size:2.2em;
   display:none;
   opacity:0;
   position:fixed;
@@ -216,9 +215,12 @@ font-size:2.2em;
 }
 
 .hamburger {
+  display:none;
+  opacity:0;
   transition:0.7s ease-in-out;
-  @media screen and (min-width:800px) {
-    display:none;
+  @media screen and (max-width:800px) {
+    display:grid;
+    opacity:1;
   }
 }
 
