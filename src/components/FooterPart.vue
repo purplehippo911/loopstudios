@@ -1,26 +1,60 @@
 <template>
     <footer>
-        <div class="container row">
+        <div class="container grid">
             
+            <a href="#" class="logo">
+                <img src="../assets/images/logo.svg" alt="our logo">
+            </a>
+
             <ul class="footer__list">
-                <li class="footer__item">About</li>
-                <li class="footer__item">Careers</li>
-                <li class="footer__item">Events</li>
-                <li class="footer__item">Products</li>
-                <li class="footer__item">Support</li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        About
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        Careers
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        Events
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        Products
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        Support
+                    </a>
+                </li>
             </ul>
-            
-            <ul class="footer__socials li footer__item">
-                <img src="../assets/images/icon-facebook.svg" alt="Facebook icon. Follow us on Facebook.">
-            </ul>
-            <ul class="footer__socials li footer__item">
-                <img src="../assets/images/icon-twitter.svg" alt="Twitter icon. Follow us on Twitter.">
-            </ul>
-            <ul class="footer__socials li footer__item">
-                <img src="../assets/images/icon-pinterest.svg" alt="Pinterest icon. Follow us on Pinterest">
-            </ul>
-            <ul class="footer__socials li footer__item">
-                <img src="../assets/images/icon-instagram.svg" alt="Instagram icon. Follow us on Instagram">
+
+            <ul class="footer__socials">
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        <img src="../assets/images/icon-facebook.svg" alt="Facebook icon. Follow us on Facebook.">
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="#" class="footer__link">
+                        <img src="../assets/images/icon-twitter.svg" alt="Twitter icon. Follow us on Twitter.">
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="" class="footer__link">
+                        <img src="../assets/images/icon-pinterest.svg" alt="Pinterest icon. Follow us on Pinterest">
+                    </a>
+                </li>
+                <li class="footer__item">
+                    <a href="" class="footer__link">
+                        <img src="../assets/images/icon-instagram.svg" alt="Instagram icon. Follow us on Instagram">
+                    </a>
+                </li>
             </ul>
 
             <p class="footer__info">© 2021 Loopstudios. All rights reserved.</p>
@@ -50,6 +84,74 @@ export default {
 @import '../styles/variables.scss';
 @import '../styles/mixin.scss';
 
-.attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+footer {
+    background:$Black;
+    padding:2rem;
+    text-align:center;
+    .grid {
+      display:flex;
+      flex-direction:column;
+      @media screen and (min-width:800px) {
+          display:grid;
+          justify-items: start;
+          grid-template-areas:
+          "🎈 🎈 📱 📱 📱"
+        "✉ ✉ ✉ 🧾 🧾";
+      }
+    }
+    .logo {
+        grid-area:🎈;
+    }
+    .footer__list {
+    display: flex;
+    flex-direction:column;
+    list-style: none;
+    grid-area:✉;
+    @media screen and (min-width:800px) {
+        flex-direction:row;
+    }
+  }
+
+  .footer__item:hover .footer__link::after {
+    content:"";
+    width: 100%;
+    padding: 0.1rem;
+    background:$White;
+    margin-top: 0.3rem;
+  }
+
+  .footer__link {
+    margin: 2rem;
+    text: {
+        decoration: none;
+        transform:uppercase;
+    }
+    color: $White;
+    font-family:'Alata', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__socials {
+      display:flex;
+      grid-area: 📱;
+  }
+  .footer__info {
+    grid-area:🧾;
+    margin-top:0;
+  }
+
+  .footer__socials, .footer__info {
+    justify-self:end;
+  }
+
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+    margin-top:2rem; 
+    .attribution a { 
+        color: hsl(228, 45%, 44%); 
+    }
+}
 </style> 

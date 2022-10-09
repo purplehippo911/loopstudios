@@ -106,7 +106,9 @@ export default {
 
   methods: {
     toggleNav() {
-      this.$refs.hamburger.classList.toggle('close');
+      // this.$refs.hamburger.classList.toggle('close');
+      this.$refs.hamburger.classList.toggle('open');
+      this.$refs.hamburger.classList.toggle('active');
 
       
       this.$refs.dropdownClose.classList.toggle('open');
@@ -121,7 +123,7 @@ export default {
 
 </script>
   
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../styles/variables.scss';
 @import '../styles/mixin.scss';
 
@@ -138,6 +140,7 @@ header {
 
 .logo {
   padding:2rem;
+  padding-left:0;
   text-align: center;
   @media screen and (min-width:800px) {
     grid-column: span 2;
@@ -155,16 +158,25 @@ header {
     list-style: none;
   }
   
+  .nav__item:hover .nav__link::after {
+    content:"";
+    width: 100%;
+    padding: 0.05rem;
+    background:$White;
+  }
+
   .nav__link {
     text-decoration: none;
-    color: $DarkGray;
+    color: $White;
     text-transform:uppercase;
     font-family:'Alata', sans-serif;
+    display: flex;
+    flex-direction: column;
   }
   @media screen and (min-width:800px) {
     display:flex;
   }
-
+  
 }
 
 .dropdown {
@@ -249,6 +261,10 @@ header {
 }
 
 .active {
+  opacity:1;
+}
+
+.hamburger.active, .hamburger.close {
   opacity:1;
 }
 
