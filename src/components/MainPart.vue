@@ -10,15 +10,17 @@
                     </picture>
 
                     <div class="interactive__col">
-                        <h2 class="interactive__title">
-                            The leader in interactive VR
-                        </h2>
-                        <p class="interactive__info">
-                            Founded in 2011, Loopstudios has been producing world-class virtual reality
-                            projects for some of the best companies around the globe. Our award-winning
-                            creations have transformed businesses through digital experiences that bind
-                            to their brand.
-                        </p>
+                        <div class="container row">
+                            <h2 class="interactive__title">
+                                The leader in interactive VR
+                            </h2>
+                            <p class="interactive__info">
+                                Founded in 2011, Loopstudios has been producing world-class virtual reality
+                                projects for some of the best companies around the globe. Our award-winning
+                                creations have transformed businesses through digital experiences that bind
+                                to their brand.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -104,21 +106,28 @@ export default {
         width:80%;
         padding:5rem;
         text-align:center;
+        position:relative;
+    
         .grid {
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             @media screen and (min-width:800px) {
-                @include grid(auto-fit, 200px, 2fr);
+                @include grid(2, 600px, 2fr);
+                justify-content: center;
             }
         }
     }
 
-
-    picture, .interactive__col {
-        width:100%
-    }
-
     .interactive__col {
+        box-shadow: 2px 0px 10px 0px $DarkGray;
+        .container {
+            padding:5rem;
+        }
         @media screen and (min-width:800px) {
-            position:aboslute;
+            position: absolute;
+            background: white;
+            bottom: 10px;
+            right: 150px;
+            width: 50%;
         }
     }
 
@@ -161,7 +170,7 @@ export default {
                 width: 100%;
                 height: .2vh;
                 opacity: .5;
-                transition: 0.7s;
+                transition:0.5s ease-out;
             }
         }
         .gallery__item:hover .gallery__wrapper {

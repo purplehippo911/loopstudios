@@ -97,6 +97,7 @@ footer {
           grid-template-areas:
           "🎈 🎈 📱 📱 📱"
         "✉ ✉ ✉ 🧾 🧾";
+        align-items: center;
       }
     }
     .logo {
@@ -147,9 +148,9 @@ footer {
 }
 
 .attribution { 
-    font-size: 11px;
+    font-size: 20px;
+    margin: 2rem 0;
     text-align: center;
-    margin-top:2rem; 
     .attribution a { 
         color: hsl(228, 45%, 44%); 
     }

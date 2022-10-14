@@ -106,7 +106,6 @@ export default {
 
   methods: {
     toggleNav() {
-      // this.$refs.hamburger.classList.toggle('close');
       this.$refs.hamburger.classList.toggle('open');
       this.$refs.hamburger.classList.toggle('active');
 
@@ -131,7 +130,12 @@ export default {
 
 header {
   @include backgroundIMG("../assets/images/mobile/image-hero.jpg", "../assets/images/desktop/image-hero.jpg" );
+  &.container {
+    padding: .3rem 3rem 7rem 3rem !important;
+    width:80%;
+  }
 }
+
 
 .grid {
   @include grid(auto-fill, 200px, 1fr);
@@ -191,6 +195,10 @@ header {
   background:$Black;
   transition:0.7s ease-in-out;
   grid-template-columns: repeat(auto-fit, minmax(169px, 1fr));
+  z-index:2;
+  &.container {
+    width:100%
+  }
   @media screen and (min-width:800px) {
     display:none;
     opacity:0;
@@ -201,6 +209,7 @@ header {
     grid-column:span 1;
     grid-row-start: 2;
     justify-self: start;
+    margin: 0 auto;
     .nav__list {
       flex-direction:column;
     }
@@ -262,10 +271,11 @@ header {
 
 .active {
   opacity:1;
+  transform: rotate(360deg);
 }
 
-.hamburger.active, .hamburger.close {
-  opacity:1;
+.header__icons.active  {
+  transform: rotate(360deg);
 }
 
 </style>
