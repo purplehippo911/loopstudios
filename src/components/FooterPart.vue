@@ -60,13 +60,13 @@
             <p class="footer__info">© 2021 Loopstudios. All rights reserved.</p>
             
         </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://www.frontendmentor.io/profile/purplehippo911">Purplehippo911</a>.
+        </div>
     </footer>
 
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://www.frontendmentor.io/profile/purplehippo911">Purplehippo911</a>.
-  </div>
 
 </template>
 
@@ -149,8 +149,9 @@ footer {
 
 .attribution { 
     font-size: 20px;
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
     text-align: center;
+    color: white;
     .attribution a { 
         color: hsl(228, 45%, 44%); 
     }

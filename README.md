@@ -36,7 +36,7 @@ Mobile📱📱:
 
 ### Links
 
-- Solution URL: [My solution](https://your-solution-url.com)
+- Solution URL: [My solution](https://www.frontendmentor.io/solutions/loopstudios-made-in-vuejs-3-pLu1hLVF)
 - Live Site URL: [My netlify site](hhttps://loopstudiomy.netlify.app/#)
 
 ## My process
