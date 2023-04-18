@@ -1,6 +1,6 @@
 @mixin backgroundIMG($Mobile, $Desktop) {
     background:url($Mobile) no-repeat;
-    background-size:cover;
+    background-size:100%;
     @media screen and (min-width:800px) {
         background:url($Desktop) no-repeat;
      }
